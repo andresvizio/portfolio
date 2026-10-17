@@ -1,0 +1,1083 @@
+/* ---------- Tokens ---------- */
+:root {
+  --neon: #dafc08;
+  --ink: #1a1c1f;
+  --page: #1a1a1a;
+  --radius-pill: 999px;
+}
+
+/* ---------- Reset & base ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Figtree', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--ink);
+  background: var(--page);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.link-underline {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.eyebrow {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: normal;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  color: currentColor;
+}
+
+.eyebrow--neon {
+  color: var(--neon);
+}
+
+.section-title {
+  font-weight: 800;
+  font-size: 48px;
+  line-height: normal;
+  text-align: center;
+  color: #ffffff;
+}
+
+.section-title--left {
+  text-align: left;
+}
+
+@media (min-width: 700px) {
+  .section-title {
+    font-size: 64px;
+  }
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 56px;
+  padding: 16px 24px;
+  border-radius: var(--radius-pill);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  white-space: nowrap;
+  transition: background-color 0.25s ease, color 0.25s ease,
+              border-color 0.25s ease, transform 0.25s ease;
+}
+
+.btn svg {
+  flex-shrink: 0;
+  transition: transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+/* La flecha se adelanta: dice "esto te lleva a algún lado" sin texto extra */
+.btn:hover svg {
+  transform: translateX(4px);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn--outline:hover {
+  background: var(--ink);
+  color: #ffffff;
+}
+
+.btn--solid:hover {
+  background: var(--neon);
+  color: var(--ink);
+}
+
+.btn--light:hover {
+  background: var(--neon);
+  color: var(--ink);
+}
+
+/* Foco visible para teclado, en el acento de la marca */
+.btn:focus-visible,
+.cta-link:focus-visible,
+.media-link:focus-visible {
+  outline: 2px solid var(--neon);
+  outline-offset: 3px;
+  border-radius: var(--radius-pill);
+}
+
+.btn--outline {
+  border: 1px solid var(--ink);
+  color: var(--ink);
+}
+
+.btn--solid {
+  background: var(--ink);
+  color: var(--neon);
+}
+
+.btn--light {
+  align-self: flex-start;
+  height: 48px;
+  padding: 12px 20px;
+  background: #ffffff;
+  color: rgba(0, 0, 0, 0.9);
+  font-size: 16px;
+  line-height: 22px;
+}
+
+/* ---------- Sticky header ----------
+   Barra completa flotante, con los mismos 12px de aire que el hero. El fondo
+   es blanco puro y sin borde. El aire alrededor de los botones es parejo:
+   12px arriba, abajo, a la derecha y entre ellos.
+   Mientras está oculta usa visibility:hidden, así no queda en el orden de
+   tabulado ni la anuncian los lectores de pantalla: si no, habría dos
+   navegaciones idénticas. */
+.sticky-header {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  height: 72px;
+  padding: 0 12px 0 24px;
+  border-radius: 16px;
+  background: #ffffff;
+  transform: translateY(calc(-100% - 16px));
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.3, 1),
+              opacity 0.25s ease,
+              visibility 0s linear 0.35s;
+}
+
+body.sticky-on .sticky-header {
+  transform: none;
+  opacity: 1;
+  visibility: visible;
+  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.3, 1),
+              opacity 0.25s ease,
+              visibility 0s;
+}
+
+.sticky-header .logo {
+  display: flex;
+  align-items: center;
+}
+
+.sticky-header .logo img {
+  width: 57.2px;
+  height: 30px;
+}
+
+.sticky-header .header-nav {
+  gap: 12px;
+}
+
+.sticky-header .btn {
+  height: 48px;
+  padding: 12px 20px;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+@media (max-width: 700px) {
+  .sticky-header {
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    height: 60px;
+    padding: 0 8px 0 16px;
+    border-radius: 16px;
+  }
+
+  .sticky-header .btn {
+    height: 44px;
+    padding: 10px 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sticky-header {
+    transform: none;
+    transition: opacity 0.2s ease, visibility 0s linear 0.2s;
+  }
+
+  body.sticky-on .sticky-header {
+    transition: opacity 0.2s ease, visibility 0s;
+  }
+}
+
+/* ---------- Hero ---------- */
+.hero-frame {
+  padding: 12px 12px 0;
+  background: var(--page);
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #ffffff;
+  border-radius: 12px 12px 64px 64px;
+}
+
+/* Altura proporcional con tope: 95% del viewport (contando los 12px de aire
+   de arriba), sin pasar nunca de los 740 del frame. El piso de 600 evita que
+   en ventanas bajas el contenido quede recortado por el overflow de la card.
+   El tope entra a partir de ~792px de alto de ventana. */
+@media (min-width: 1100px) {
+  .hero {
+    height: clamp(600px, calc(95vh - 12px), 740px);
+    height: clamp(600px, calc(95dvh - 12px), 740px);
+  }
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 48px;
+}
+
+.logo img {
+  width: 57.2px;
+  height: 30px;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 22px 48px 48px;
+  will-change: transform;
+}
+
+@media (min-width: 1100px) {
+  .hero-content {
+    padding-left: 148px;
+  }
+}
+
+.hero-title {
+  font-weight: 800;
+  font-size: 34px;
+  line-height: 1.15;
+  color: var(--ink);
+  max-width: 683px;
+}
+
+@media (min-width: 900px) {
+  .hero-title {
+    font-size: 52px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero-title {
+    font-size: 68px;
+    line-height: 78px;
+  }
+}
+
+.hero-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: auto;
+  padding-top: 56px;
+}
+
+@media (min-width: 900px) {
+  .hero-bottom {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+  }
+}
+
+.hero-history {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.3;
+  max-width: 652px;
+}
+
+@media (min-width: 900px) {
+  .hero-history {
+    font-size: 28px;
+    line-height: 36px;
+    /* sits 14px above the Discover work row, as in the frame */
+    margin-bottom: 14px;
+  }
+}
+
+.discover-work {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 36px;
+  color: var(--ink);
+}
+
+@media (min-width: 900px) {
+  .discover-work {
+    font-size: 28px;
+  }
+}
+
+.discover-dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-pill);
+  background: var(--page);
+  color: var(--neon);
+  flex-shrink: 0;
+}
+
+/* ---------- Shader fill (WebGPU) ---------- */
+/* Sits under the content of .hero and .site-footer; both have a solid
+   background underneath, so browsers without WebGPU just see white. */
+.fx-shader {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero > .site-header,
+.hero > .hero-content,
+.site-footer > *:not(.fx-shader):not(.footer-logo) {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Work (dark section) ---------- */
+.work {
+  background: var(--page);
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .work {
+    padding: 140px 106px;
+    gap: 140px;
+  }
+}
+
+.about,
+.selected-work,
+.gallery-section {
+  width: 100%;
+  max-width: 1228px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* ---------- About ---------- */
+.about-row {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+@media (min-width: 900px) {
+  .about-row {
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+
+.about-what,
+.about-skills {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: #ffffff;
+}
+
+.about-what {
+  flex: 0 0 auto;
+}
+
+@media (min-width: 900px) {
+  .about-what {
+    width: 708px;
+    padding-right: 32px;
+  }
+}
+
+.about-skills {
+  flex: 1;
+  min-width: 0;
+}
+
+.about-text {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+@media (min-width: 900px) {
+  .about-text {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+
+.chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 12px;
+}
+
+.chip {
+  background: rgba(255, 255, 255, 0.07);
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: normal;
+  padding: 8px 16px;
+  border-radius: 1000px;
+  white-space: nowrap;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  width: 100%;
+}
+
+/* ---------- Process ---------- */
+.process {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: #ffffff;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+@media (min-width: 700px) {
+  .process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .process-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.process-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.process-card h3 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color: #ffffff;
+}
+
+.process-card p {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
+}
+
+/* ---------- My Portfolio ---------- */
+.work-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 1100px) {
+  .work-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.case-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  color: #ffffff;
+  padding: 32px 0 0 32px;
+}
+
+@media (min-width: 900px) {
+  .case-card {
+    padding: 50px 0 0 50px;
+  }
+}
+
+.case-head {
+  display: flex;
+  flex-direction: column;
+  padding-right: 32px;
+}
+
+@media (min-width: 900px) {
+  .case-head {
+    /* eyebrow at 50 -> CTA bottom at 244 in the frame */
+    min-height: 194px;
+    padding-right: 50px;
+  }
+}
+
+.case-head > .cta-link,
+.case-head > .cta-row {
+  margin-top: auto;
+  padding-top: 24px;
+}
+
+.case-card h3 {
+  font-weight: 800;
+  font-size: 26px;
+  line-height: normal;
+  margin-top: 12px;
+}
+
+@media (min-width: 900px) {
+  .case-card h3 {
+    font-size: 32px;
+  }
+}
+
+.case-desc {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.4;
+  margin-top: 6px;
+}
+
+@media (min-width: 900px) {
+  .case-desc {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+/* --- Compact cards (Combos, PDP) --- */
+.case-card--compact {
+  gap: 32px;
+  overflow: hidden;
+  padding: 32px 0 0 32px;
+}
+
+@media (min-width: 900px) {
+  .case-card--compact {
+    padding: 48px 0 0 48px;
+  }
+}
+
+.case-card--compact .case-head {
+  min-height: 0;
+  gap: 12px;
+  padding-right: 32px;
+}
+
+@media (min-width: 900px) {
+  .case-card--compact .case-head {
+    padding-right: 48px;
+    /* Figma pins the button at y=248 on every compact card, so the head
+       keeps a fixed 168px box whatever the copy length. */
+    min-height: 168px;
+  }
+}
+
+/* Row of buttons inside a card (the Article offers both languages) */
+.case-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.case-actions .btn--light {
+  align-self: auto;
+}
+
+.case-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.case-titles h3,
+.case-titles .case-desc {
+  margin-top: 0;
+}
+
+/* --- Wide card (Mercado Libre's Homepage) --- */
+.case-card--wide {
+  grid-column: 1 / -1;
+  gap: 32px;
+  padding: 32px;
+}
+
+@media (min-width: 900px) {
+  .case-card--wide {
+    gap: 50px;
+    padding: 50px 50px 0;
+  }
+}
+
+.case-card--wide .case-head {
+  min-height: 0;
+  gap: 16px;
+  padding-right: 0;
+}
+
+@media (min-width: 1100px) {
+  .case-card--wide .case-head {
+    padding-right: 510px;
+  }
+}
+
+.case-card--wide h3 {
+  font-size: 30px;
+  margin-top: 0;
+}
+
+@media (min-width: 900px) {
+  .case-card--wide h3 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+}
+
+/* ---------- CTAs inside cards ---------- */
+.cta-row {
+  display: flex;
+  gap: 44px;
+  flex-wrap: wrap;
+}
+
+.cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  color: #ffffff;
+}
+
+.cta-link svg {
+  flex-shrink: 0;
+  transition: transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+.cta-link {
+  transition: text-underline-offset 0.25s ease, color 0.25s ease;
+}
+
+.cta-link:hover {
+  text-underline-offset: 5px;
+}
+
+.cta-link:hover svg {
+  transform: translateX(4px);
+}
+
+.cta-link--dark {
+  color: var(--ink);
+}
+
+/* ---------- Case images ---------- */
+.case-head + .case-image,
+.case-head + .homepage-grid {
+  margin-top: 32px;
+}
+
+@media (min-width: 900px) {
+  .case-head + .case-image,
+  .case-head + .homepage-grid {
+    margin-top: 50px;
+  }
+}
+
+.case-card--compact .case-image,
+.case-card--wide .homepage-grid {
+  margin-top: 0;
+}
+
+.case-image {
+  overflow: hidden;
+  border-radius: 24px 0 24px 0;
+}
+
+.case-image img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 554 / 439;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.case-card--compact .case-image img {
+  aspect-ratio: 556 / 439;
+}
+
+/* Placeholder treatment carried over from the frame */
+.case-image--dim img {
+  opacity: 0.2;
+}
+
+/* ---------- Imágenes que son link ----------
+   Sólo las tres que tienen un destino único: ML Mobile, ML Desktop y
+   Mercado Pago Delivery. La zona activa es la imagen y su botón, no la card
+   entera: el texto no dispara nada. Imagen y botón se responden entre sí
+   porque apuntan al mismo lugar. */
+.media-link {
+  display: block;
+  overflow: hidden;
+}
+
+.media-link img {
+  transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.3, 1);
+  will-change: transform;
+}
+
+/* zoom: desde la imagen, o desde el botón que comparte su destino */
+.media-link:hover img,
+.case-card--compact:has(.btn--light[data-default]:hover) .media-link img,
+.platform-card:has(.cta-link:hover) .media-link img {
+  transform: scale(1.04);
+}
+
+/* el botón se enciende también cuando el mouse está sobre la imagen */
+.case-card--compact:has(.media-link:hover) .btn--light[data-default] {
+  background: var(--neon);
+  color: var(--ink);
+}
+
+.case-card--compact:has(.media-link:hover) .btn--light[data-default] svg {
+  transform: translateX(4px);
+}
+
+/* mismo criterio para las barras Mobile / Desktop */
+.platform-card:has(.media-link:hover) .cta-link {
+  text-underline-offset: 5px;
+}
+
+.platform-card:has(.media-link:hover) .cta-link svg {
+  transform: translateX(4px);
+}
+
+/* ---------- Mobile / desktop cards ---------- */
+.homepage-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 1000px) {
+  .homepage-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.platform-card {
+  background: #ffffff;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+}
+
+.platform-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: 60px;
+  padding: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.platform-bar span {
+  font-weight: 800;
+  font-size: 24px;
+  line-height: normal;
+  color: var(--ink);
+}
+
+.platform-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 554 / 409;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* ---------- UI / Visual Work: captioned pieces ---------- */
+.piece-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px 20px;
+}
+
+@media (min-width: 900px) {
+  .piece-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.piece {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.piece-media {
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.piece-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 604 / 453;
+}
+
+.piece-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #ffffff;
+}
+
+.piece-text h3 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.piece-text p {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.cta-link--small {
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 4px;
+}
+
+.cta-link--small svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------- Motion Graphics ---------- */
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 900px) {
+  .video-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.video-embed {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 24px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ---------- Galleries (UI Work / Branding) ---------- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.gallery-item {
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 604 / 453;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  position: relative;
+  background: #ffffff;
+  padding: 64px 32px;
+}
+
+@media (min-width: 900px) {
+  .site-footer {
+    min-height: 484px;
+    padding: 100px;
+  }
+}
+
+.footer-title {
+  font-weight: 800;
+  font-size: 34px;
+  line-height: 42px;
+  letter-spacing: -0.48px;
+  color: rgba(0, 0, 0, 0.9);
+  margin-bottom: 12px;
+}
+
+@media (min-width: 900px) {
+  .footer-title {
+    font-size: 48px;
+    line-height: 56px;
+  }
+}
+
+.footer-text {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.4;
+  max-width: 678px;
+  color: var(--ink);
+}
+
+@media (min-width: 900px) {
+  .footer-text {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+
+.footer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+@media (min-width: 900px) {
+  .footer-actions {
+    margin-top: 76px;
+  }
+}
+
+.footer-logo {
+  width: 76px;
+  height: 40px;
+  margin-top: 40px;
+  object-fit: contain;
+}
+
+@media (min-width: 900px) {
+  .footer-logo {
+    position: absolute;
+    top: 100px;
+    right: 106px;
+    margin-top: 0;
+  }
+}
+
+/* ---------- Movimiento reducido ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .btn svg,
+  .cta-link,
+  .cta-link svg,
+  .media-link img {
+    transition-duration: 0.01ms;
+  }
+
+  .platform-card:hover .media-link img,
+  .case-card--compact:hover .media-link img,
+  .btn:hover svg,
+  .cta-link:hover svg,
+  .btn:active {
+    transform: none;
+  }
+}

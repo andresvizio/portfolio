@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+.AppleDouble
+._*
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Scripts de descarga de assets: ya cumplieron su función y GitHub Pages
+# serviría el .sh públicamente. Quedan en la carpeta local, fuera del repo.
+download-assets*.sh
+
+# Temporales
+*.log
+*.bak
+_dupes/
+_inbox/

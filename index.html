@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Andy Vizio — Product Designer</title>
+  <meta name="description" content="Andy Vizio, product designer with 14 years of experience, based in Barcelona." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- STICKY HEADER (aparece al pasar el hero) -->
+  <div class="sticky-header" id="stickyHeader">
+    <a href="#" class="logo" aria-label="Andy Vizio — ir al inicio">
+      <img src="assets/logo-av.svg" alt="" />
+    </a>
+    <nav class="header-nav" aria-label="Principal">
+      <a href="https://www.linkedin.com/in/andresvizio/" target="_blank" rel="noopener" class="btn btn--outline">Linkedin</a>
+      <a href="mailto:andresvizio@gmail.com" class="btn btn--solid">Get in touch</a>
+    </nav>
+  </div>
+
+
+  <!-- HERO (white rounded card on the dark page) -->
+  <div class="hero-frame">
+    <section class="hero">
+      <canvas class="fx-shader" data-shader aria-hidden="true"></canvas>
+
+      <header class="site-header">
+        <a href="#" class="logo" aria-label="Andy Vizio home">
+          <img src="assets/logo-av.svg" alt="Andy Vizio logo" />
+        </a>
+        <nav class="header-nav">
+          <a href="https://www.linkedin.com/in/andresvizio/" target="_blank" rel="noopener" class="btn btn--outline">Linkedin</a>
+          <a href="mailto:andresvizio@gmail.com" class="btn btn--solid">Get in touch</a>
+        </nav>
+      </header>
+
+      <div class="hero-content">
+        <h1 class="hero-title">Hi! I'm Andy, a Product Designer based in Barcelona.</h1>
+
+        <div class="hero-bottom">
+          <div class="hero-history">
+            <p>Currently working at <a href="https://glovoapp.com/es" target="_blank" rel="noopener" class="link-underline">Glovo</a></p>
+            <p>Previously at <a href="https://www.mercadolibre.com.ar/" target="_blank" rel="noopener" class="link-underline">Mercado Libre</a>, and <a href="https://aerolab.co/" target="_blank" rel="noopener" class="link-underline">Aerolab</a>.</p>
+          </div>
+
+          <a href="#work" class="discover-work">
+            <span>Discover work</span>
+            <span class="discover-dot">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g transform="translate(6 3)" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 1V25"/><path d="M19 16L10 25L1 16"/></g></svg>
+            </span>
+          </a>
+        </div>
+      </div>
+
+    </section>
+  </div>
+
+  <!-- WORK (dark section) -->
+  <main id="work" class="work">
+
+    <!-- ABOUT ME -->
+    <section class="about">
+      <h2 class="section-title section-title--left">About Me</h2>
+
+      <div class="about-row">
+        <div class="about-what">
+          <p class="eyebrow eyebrow--neon">Summary</p>
+          <p class="about-text">Product designer with 14 years of experience crafting consumer e-commerce apps at scale. Having spent recent years leading product design efforts at Mercado Libre and Glovo, my work bridges high-impact transactional systems with strong visual roots from my agency days at Aerolab.</p>
+        </div>
+        <div class="about-skills">
+          <p class="eyebrow eyebrow--neon">My Skillset</p>
+          <div class="chip-list">
+            <span class="chip">Product design</span>
+            <span class="chip">AI Prototyping</span>
+            <span class="chip">Design systems</span>
+            <span class="chip">Accessibility</span>
+            <span class="chip">User research</span>
+            <span class="chip">UX Writing</span>
+            <span class="chip">Data analysis</span>
+            <span class="chip">Leadership</span>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <div class="process">
+        <p class="eyebrow eyebrow--neon">My process</p>
+        <div class="process-grid">
+          <div class="process-card">
+            <h3>Understand the problem</h3>
+            <p>I start the design process with research, including surveys, user interviews, data analysis, and competitor benchmarking to discover user's problems and find improvement opportunities.</p>
+          </div>
+          <div class="process-card">
+            <h3>Ideate a solution</h3>
+            <p>Next, I lead collaborative sessions with engineers and product managers to ideate innovative solutions. I then create low-fidelity mockups to visualize and define a high level solution.</p>
+          </div>
+          <div class="process-card">
+            <h3>Craft with excellence</h3>
+            <p>I then transform the selected solution into a polished, high-fidelity prototype, focusing on usability, micro-interactions, accessibility, and compelling content.</p>
+          </div>
+          <div class="process-card">
+            <h3>Validate &amp; test</h3>
+            <p>The final step involves validating the solution through user testing. I use the discovered insights to polish the final design and deliver detailed specs to engineers for implementation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MY PORTFOLIO -->
+    <section class="selected-work">
+      <h2 class="section-title">My Portfolio</h2>
+
+      <div class="work-grid">
+
+        <!-- Mercado Libre's Homepage (full width) -->
+        <article class="case-card case-card--wide">
+          <div class="case-head">
+            <p class="eyebrow eyebrow--neon">UX Case Study</p>
+            <div class="case-titles">
+              <h3>Mercado Libre&rsquo;s Homepage</h3>
+              <p class="case-desc">Improving Latin Americas largest e-commerce homepage&rsquo;s conversion rate with personalization.</p>
+            </div>
+          </div>
+
+          <div class="homepage-grid">
+            <div class="platform-card">
+              <div class="platform-bar">
+                <span>Mobile</span>
+                <a href="https://www.figma.com/proto/9oootBW8Pc9Yno8KxskYvh/Mercado-Libre&#39;s-Homepage?page-id=0%3A1&amp;node-id=1-44461&amp;node-type=frame&amp;viewport=-351%2C7039%2C0.68&amp;t=rd9pc1XVA4bPRT37-1&amp;scaling=min-zoom&amp;content-scaling=fixed" target="_blank" rel="noopener" class="cta-link cta-link--dark">View case study
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M5 12H19M12 19L19 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </div>
+              <a class="media-link" href="https://www.figma.com/proto/9oootBW8Pc9Yno8KxskYvh/Mercado-Libre&#39;s-Homepage?page-id=0%3A1&amp;node-id=1-44461&amp;node-type=frame&amp;viewport=-351%2C7039%2C0.68&amp;t=rd9pc1XVA4bPRT37-1&amp;scaling=min-zoom&amp;content-scaling=fixed" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/ml-homepage-mobile.png" alt="Mercado Libre homepage — mobile" /></a>
+            </div>
+            <div class="platform-card">
+              <div class="platform-bar">
+                <span>Desktop</span>
+                <a href="https://www.behance.net/gallery/66109285/Rediseno-Home" target="_blank" rel="noopener" class="cta-link cta-link--dark">View case study
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M5 12H19M12 19L19 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </div>
+              <a class="media-link" href="https://www.behance.net/gallery/66109285/Rediseno-Home" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/ml-homepage-desktop.png" alt="Mercado Libre homepage — desktop" /></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Mercado Pago Delivery -->
+        <article class="case-card case-card--compact">
+          <div class="case-head">
+            <p class="eyebrow eyebrow--neon">UX Case Study</p>
+            <div class="case-titles">
+              <h3>Mercado Pago Delivery</h3>
+              <p class="case-desc">Leading a UX team in building a food delivery app from scratch, within a wallet.</p>
+            </div>
+          </div>
+          <a data-default href="https://www.figma.com/proto/edJ5Y8FH2vxElAcVEJybaO/Portfolio-(2024)?page-id=513%3A386330&amp;node-id=513-386331&amp;viewport=730%2C9817%2C1&amp;t=Srcxas1JBXD2fvhV-8&amp;scaling=scale-down-width&amp;content-scaling=fixed&amp;disable-default-keyboard-nav=1&amp;hotspot-hints=0&amp;hide-ui=1" target="_blank" rel="noopener" class="btn btn--light">View case study
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M5 12H19M12 19L19 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="case-image">
+            <a class="media-link" href="https://www.figma.com/proto/edJ5Y8FH2vxElAcVEJybaO/Portfolio-(2024)?page-id=513%3A386330&amp;node-id=513-386331&amp;viewport=730%2C9817%2C1&amp;t=Srcxas1JBXD2fvhV-8&amp;scaling=scale-down-width&amp;content-scaling=fixed&amp;disable-default-keyboard-nav=1&amp;hotspot-hints=0&amp;hide-ui=1" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/mercado-pago-delivery.png" alt="Mercado Pago Delivery app mockup" /></a>
+          </div>
+        </article>
+
+        <!-- Article -->
+        <article class="case-card case-card--compact">
+          <div class="case-head">
+            <p class="eyebrow eyebrow--neon">Article</p>
+            <div class="case-titles">
+              <h3>El Rol Estrat&eacute;gico del L&iacute;der T&eacute;cnico en Equipos de UX: Un Camino hacia la Excelencia</h3>
+            </div>
+          </div>
+          <div class="case-actions">
+            <a data-default href="https://medium.com/@andrsvizio/the-strategic-role-of-the-technical-leader-in-ux-teams-a-path-to-excellence-5f43bdf4aa85" target="_blank" rel="noopener" class="btn btn--light">English
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M5 12H19M12 19L19 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="https://medium.com/@andrsvizio/el-rol-estrat%C3%A9gico-del-l%C3%ADder-t%C3%A9cnico-en-equipos-de-ux-un-camino-hacia-la-excelencia-c8a206e54c5f" target="_blank" rel="noopener" class="btn btn--light">Spanish
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M5 12H19M12 19L19 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <div class="case-image">
+            <a class="media-link" href="https://medium.com/@andrsvizio/the-strategic-role-of-the-technical-leader-in-ux-teams-a-path-to-excellence-5f43bdf4aa85" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/article-lider-tecnico.png" alt="Article illustration" /></a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- UI / VISUAL WORK -->
+    <section class="gallery-section">
+      <h2 class="section-title">UI/Visual Work</h2>
+      <div class="piece-grid">
+        <article class="piece">
+          <div class="piece-media"><img src="assets/ui-work-01.jpg" loading="lazy" alt="Materia Gris" /></div>
+          <div class="piece-text">
+            <h3>Materia Gris</h3>
+            <p>Landing page design for a Buenos Aires based software consultancy agency.</p>
+          </div>
+        </article>
+
+        <article class="piece">
+          <div class="piece-media"><img src="assets/ui-work-02.png" loading="lazy" alt="Mediverso" /></div>
+          <div class="piece-text">
+            <h3>Mediverso</h3>
+            <p>Concept for a web app for doctors to digitalize their patient&rsquo;s medical record and put it in hands of their users.</p>
+          </div>
+        </article>
+
+        <article class="piece">
+          <div class="piece-media"><img src="assets/ui-work-03.png" loading="lazy" alt="UI Experiment" /></div>
+          <div class="piece-text">
+            <h3>UI Experiment</h3>
+            <p>An experiment meant to test a UI that worked with background blur as a background.</p>
+          </div>
+        </article>
+
+        <article class="piece">
+          <div class="piece-media"><img src="assets/ui-work-04.gif" loading="lazy" alt="Onboarding The Graduate" /></div>
+          <div class="piece-text">
+            <h3>Onboarding The Graduate</h3>
+            <p>Onboarding animation for The Graduate app.</p>
+          </div>
+        </article>
+
+        <article class="piece">
+          <div class="piece-media"><img src="assets/ui-work-05.png" loading="lazy" alt="Design system" /></div>
+          <div class="piece-text">
+            <h3>Design system</h3>
+            <p>Exercise for testing UI tokens and components for my own design system.</p>
+          </div>
+        </article>
+
+        <article class="piece">
+          <div class="piece-media"><img src="assets/ui-work-06.png" loading="lazy" alt="Jukebox" /></div>
+          <div class="piece-text">
+            <h3>Jukebox</h3>
+            <p>Landing page for jukebox, an app we created at Aerolab for making a shared playlist where song would play in order of most voted.</p>
+          <a href="#" class="cta-link cta-link--small">Full landing page
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M5 12H19M12 19L19 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          </div>
+        </article>
+
+        <article class="piece">
+          <div class="piece-media"><img src="assets/ui-work-07.png" loading="lazy" alt="Xapo's Vault" /></div>
+          <div class="piece-text">
+            <h3>Xapo&rsquo;s Vault</h3>
+            <p>Landing page for Xapo&rsquo;s security which explains how they secure and insure bitcoins using a three layer solution.</p>
+          <a href="#" class="cta-link cta-link--small">Full landing page
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M5 12H19M12 19L19 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- MOTION GRAPHICS -->
+    <section class="gallery-section">
+      <h2 class="section-title">Motion Graphics</h2>
+      <div class="video-grid">
+        <div class="video-embed">
+          <iframe src="https://player.vimeo.com/video/137146455" title="Motion graphics reel" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="video-embed">
+          <iframe src="https://player.vimeo.com/video/135398409" title="Motion graphics reel" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- BRANDING -->
+    <section class="gallery-section">
+      <h2 class="section-title">Branding</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="assets/branding-01.png" loading="lazy" alt="Branding sample 1" /></div>
+        <div class="gallery-item"><img src="assets/branding-02.png" loading="lazy" alt="Huertabox branding" /></div>
+        <div class="gallery-item"><img src="assets/branding-03.png" loading="lazy" alt="Branding sample 3" /></div>
+        <div class="gallery-item"><img src="assets/branding-04.png" loading="lazy" alt="Jukebox logo construction" /></div>
+        <div class="gallery-item"><img src="assets/branding-05.png" loading="lazy" alt="Branding sample 5" /></div>
+        <div class="gallery-item"><img src="assets/branding-06.png" loading="lazy" alt="Provocación branding" /></div>
+        <div class="gallery-item"><img src="assets/branding-07.png" loading="lazy" alt="Tapatalk branding" /></div>
+        <div class="gallery-item"><img src="assets/branding-08.png" loading="lazy" alt="Squirrel branding" /></div>
+        <div class="gallery-item"><img src="assets/branding-09.png" loading="lazy" alt="Priority Travel logo" /></div>
+        <div class="gallery-item"><img src="assets/branding-10.png" loading="lazy" alt="Priority Travel logo alt" /></div>
+        <div class="gallery-item"><img src="assets/branding-11.png" loading="lazy" alt="Branding sample 11" /></div>
+        <div class="gallery-item"><img src="assets/branding-12.png" loading="lazy" alt="Branding sample 12" /></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <canvas class="fx-shader" data-shader aria-hidden="true"></canvas>
+
+    <h2 class="footer-title">Let&rsquo;s get in touch</h2>
+    <p class="footer-text">I&rsquo;d love to chat, I&rsquo;m available for full-time or freelance work, remotely or hybrid in Spain.</p>
+
+    <div class="footer-actions">
+      <a href="mailto:andresvizio@gmail.com" class="btn btn--solid">Get in touch</a>
+      <a href="https://www.linkedin.com/in/andresvizio/" target="_blank" rel="noopener" class="btn btn--outline">Linkedin</a>
+    </div>
+
+    <img class="footer-logo" src="assets/logo-av.svg" alt="Andy Vizio logo" />
+  </footer>
+
+  <script src="shader.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
