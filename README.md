@@ -52,7 +52,5 @@ fuente en producción** — caducan a los 7 días. Hay que exportar y guardar lo
 
 ## Pendientes
 
-- `ui-work-05.png` es la pieza "Design system"; conviene reexportarla de Figma
-  en mejor calidad.
 - Los dos links "Full landing page" (Jukebox y Xapo's Vault) apuntan a `#`.
 - El GIF de Onboarding pesa 3,4 MB. Convertido a MP4/WebM bajaría a ~300 KB.
